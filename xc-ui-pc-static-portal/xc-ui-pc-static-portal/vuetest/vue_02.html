@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js测试小程序</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<!--实现body区域显示-->
+<div id="app">
+    <!--{{name}}-->
+    <span v-text="name"></span>
+    <!--v-model是可以将数据对象和dom对象双向绑定-->
+    <input type="text" v-model="num1"/>+
+    <input type="text" v-model="num2"/>
+    <!--{{Number.parseInt(num1)+Number.parseInt(num2)}}-->
+    <!--下面的result是数据对象里面的-->
+    <span v-text="result"></span>
+    <!--绑定了下面的change方法-->
+    <button v-on:click="change">计算</button>
+</div>
+<div v‐bind:style="{ fontSize: size + 'px' }">我</div>
+</body>
+<script>
+    // 实例化Vue对象
+    //vm :叫做MVVM中的 View Model
+    var VM = new Vue({
+        el:"#app",//表示当前vue对象接管app的div区域
+        data:{
+            name:'传智播客',// 相当于是MVVM中的Model这个角色
+            num1:1,
+            num2:1,
+            result:0,
+            size:100
+        },
+        methods:{
+            change:function () {
+                this.result = Number.parseInt(this.num1)+Number.parseInt(this.num2)
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js测试小程序</title>
+    <script src="/js/vue/vue.min.js"></script>
+</head>
+<body>
+<!--实现body区域显示-->
+<div id="app">
+{{name}}
+    <!‐‐ 在Vue接管区域中使用Vue的系统指令呈现数据
+    这些指令就相当于是MVVM中的View这个角色 ‐‐>
+</div>
+</body>
+<script>
+    // 实例化Vue对象
+    //vm :叫做MVVM中的 View Model
+    var VM = new Vue({
+        el:"#app",//表示当前vue对象接管app的div区域
+        data:{//model数据
+            name:'传智播客'// 相当于是MVVM中的Model这个角色
+        }
+    });
+</script>
+</html>
